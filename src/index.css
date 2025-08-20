@@ -18,10 +18,10 @@ All colors are HSL for perfect theming.
     --popover: 0 0% 8%;
     --popover-foreground: 45 100% 90%;
 
-    /* Premium Gold Primary */
-    --primary: 45 100% 65%;
-    --primary-foreground: 0 0% 5%;
-    --primary-glow: 45 100% 75%;
+    /* Premium Wine Primary */
+    --primary: 1 78% 40%;
+    --primary-foreground: 0 0% 95%;
+    --primary-glow: 1 78% 50%;
 
     /* Deep Wine Secondary */
     --secondary: 330 50% 25%;
@@ -30,16 +30,16 @@ All colors are HSL for perfect theming.
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 60%;
 
-    /* Gold Accent */
-    --accent: 45 100% 65%;
-    --accent-foreground: 0 0% 5%;
+    /* Wine Accent */
+    --accent: 1 78% 40%;
+    --accent-foreground: 0 0% 95%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 45 100% 90%;
 
     --border: 0 0% 20%;
     --input: 0 0% 15%;
-    --ring: 45 100% 65%;
+    --ring: 1 78% 40%;
 
     --radius: 0.75rem;
     

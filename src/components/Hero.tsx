@@ -8,17 +8,15 @@ interface HeroProps {
 export const Hero = ({ onNavigateToMenu }: HeroProps) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
+      {/* Vimeo Video Background */}
       <div className="absolute inset-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
+        <iframe 
+          src="https://player.vimeo.com/video/1111775404?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;background=1"
           className="w-full h-full object-cover"
-        >
-          <source src="/hero-video.mp4" type="video/mp4" />
-        </video>
+          frameBorder="0"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+          style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}
+        />
         {/* Fallback background image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -60,9 +58,7 @@ export const Hero = ({ onNavigateToMenu }: HeroProps) => {
         <div className="space-y-8 mb-16">
           <h1 className="font-playfair text-5xl md:text-7xl lg:text-8xl font-bold leading-tight animate-slide-up">
             <span className="block text-foreground mb-4">
-              Comida feita com 
-              <Heart className="inline-block w-12 h-12 md:w-16 md:h-16 text-primary mx-4 animate-heartbeat" />
-              <span className="text-primary animate-glow">amor</span>
+              Comida feita com amor,
             </span>
             <span className="block text-3xl md:text-4xl lg:text-5xl text-muted-foreground font-light">
               para reunir quem você ama.
@@ -91,31 +87,18 @@ export const Hero = ({ onNavigateToMenu }: HeroProps) => {
             {/* Button shimmer effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
             
-            <Star className="w-6 h-6 mr-3 animate-spin" style={{ animationDuration: '3s' }} />
             <span>VER CARDÁPIO</span>
-            <Star className="w-6 h-6 ml-3 animate-spin" style={{ animationDuration: '3s', animationDirection: 'reverse' }} />
           </Button>
         </div>
 
         {/* Premium badge */}
         <div className="mt-12 animate-fade-in" style={{ animationDelay: '0.9s' }}>
           <div className="inline-flex items-center space-x-2 bg-black/30 backdrop-blur-sm border border-primary/30 rounded-full px-6 py-3">
-            <Star className="w-4 h-4 text-primary fill-primary" />
-            <span className="text-sm font-medium text-primary-glow tracking-wider uppercase">Experiência Premium</span>
-            <Star className="w-4 h-4 text-primary fill-primary" />
+            <span className="text-sm font-medium text-primary-glow tracking-wider">Mais do que delivery: é comida gostosa na sua porta</span>
           </div>
         </div>
       </div>
 
-      {/* Enhanced scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="relative">
-          <div className="w-8 h-14 border-2 border-primary rounded-full flex justify-center bg-black/20 backdrop-blur-sm">
-            <div className="w-2 h-6 bg-gradient-to-b from-primary to-primary-glow rounded-full mt-3 animate-pulse" />
-          </div>
-          <div className="absolute inset-0 w-8 h-14 rounded-full bg-primary/10 blur-sm animate-glow" />
-        </div>
-      </div>
     </section>
   );
 };
