@@ -45,9 +45,12 @@ All colors are HSL for perfect theming.
     
     /* Premium Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-hero: linear-gradient(180deg, hsl(0 0% 5% / 0.8), hsl(0 0% 5% / 0.95));
+    --gradient-hero: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(123, 44, 44, 0.7) 30%, rgba(184, 134, 11, 0.4) 70%, rgba(0, 0, 0, 0.9) 100%);
     --gradient-card: linear-gradient(135deg, hsl(0 0% 8% / 0.8), hsl(0 0% 12% / 0.9));
     --gradient-wine: linear-gradient(135deg, hsl(330 50% 25%), hsl(330 60% 35%));
+    --gradient-texture: radial-gradient(circle at 20% 50%, rgba(184, 134, 11, 0.1) 0%, transparent 50%), 
+                        radial-gradient(circle at 80% 20%, rgba(123, 44, 44, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(184, 134, 11, 0.08) 0%, transparent 50%);
     
     /* Premium Shadows */
     --shadow-gold: 0 10px 30px -10px hsl(var(--primary) / 0.3);
@@ -108,7 +111,19 @@ All colors are HSL for perfect theming.
   }
   
   .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
+    animation: glow 3s ease-in-out infinite;
+  }
+  
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 3s ease-in-out infinite;
+  }
+  
+  .animate-heartbeat {
+    animation: heartbeat 2s ease-in-out infinite;
   }
   
   @keyframes fadeIn {
@@ -128,11 +143,22 @@ All colors are HSL for perfect theming.
   }
   
   @keyframes glow {
-    from { 
-      box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
-    }
-    to { 
-      box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
-    }
+    0%, 100% { text-shadow: 0 0 20px rgba(184, 134, 11, 0.5); }
+    50% { text-shadow: 0 0 30px rgba(184, 134, 11, 0.8), 0 0 40px rgba(184, 134, 11, 0.4); }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
   }
 }

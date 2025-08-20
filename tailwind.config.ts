@@ -63,6 +63,7 @@ export default {
 				'gradient-hero': 'var(--gradient-hero)',
 				'gradient-card': 'var(--gradient-card)',
 				'gradient-wine': 'var(--gradient-wine)',
+				'gradient-texture': 'var(--gradient-texture)',
 			},
 			boxShadow: {
 				'gold': 'var(--shadow-gold)',
@@ -98,7 +99,13 @@ export default {
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.8s ease-out',
+				'slide-up': 'slide-up 0.6s ease-out',
+				'glow': 'glow 3s ease-in-out infinite',
+				'float': 'float 4s ease-in-out infinite',
+				'shimmer': 'shimmer 3s ease-in-out infinite',
+				'heartbeat': 'heartbeat 2s ease-in-out infinite'
 			}
 		}
 	},
