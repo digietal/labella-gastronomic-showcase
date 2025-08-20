@@ -1,11 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Heart, Star } from "lucide-react";
-interface HeroProps {
-  onNavigateToMenu: () => void;
-}
-export const Hero = ({
-  onNavigateToMenu
-}: HeroProps) => {
+
+export const Hero = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Vimeo Video Background */}
       <div className="absolute inset-0">
@@ -76,20 +72,18 @@ export const Hero = ({
           </div>
         </div>
 
-        {/* Enhanced CTA Button */}
-        <div className="animate-slide-up" style={{
+        {/* Delivery Notice */}
+        <div className="mt-12 animate-fade-in" style={{
         animationDelay: '0.6s'
       }}>
-          <Button onClick={onNavigateToMenu} variant="hero" size="lg" className="group relative overflow-hidden px-16 py-6 text-xl font-semibold transform hover:scale-105 transition-all duration-500 shadow-elegant hover:shadow-glow animate-heartbeat">
-            {/* Button shimmer effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
-            
-            <span>VER CARDÁPIO</span>
-          </Button>
+          <div className="inline-flex items-center space-x-3 bg-black/40 backdrop-blur-sm border border-primary/40 rounded-full px-8 py-4">
+            <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+            <span className="text-lg font-medium text-primary-glow tracking-wider">SÓ TRABALHAMOS COM DELIVERY</span>
+          </div>
         </div>
 
         {/* Premium badge */}
-        <div className="mt-12 animate-fade-in" style={{
+        <div className="mt-6 animate-fade-in" style={{
         animationDelay: '0.9s'
       }}>
           <div className="inline-flex items-center space-x-2 bg-black/30 backdrop-blur-sm border border-primary/30 rounded-full px-6 py-3">

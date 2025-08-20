@@ -1,14 +1,13 @@
-import { useNavigate } from "react-router-dom";
 import { Hero } from "@/components/Hero";
+import { CompactMenu } from "@/components/CompactMenu";
 
 const Index = () => {
-  const navigate = useNavigate();
-
-  const handleNavigateToMenu = () => {
-    navigate('/categorias');
-  };
-
-  return <Hero onNavigateToMenu={handleNavigateToMenu} />;
+  return (
+    <div>
+      <Hero />
+      <CompactMenu />
+    </div>
+  );
 };
 
 export default Index;
