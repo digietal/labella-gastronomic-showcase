@@ -31,15 +31,35 @@ export const CompactMenu = () => {
         {/* Categories Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 mb-12">
           {categories.map((category) => (
-            <Button
+            <button
               key={category.id}
-              variant={selectedCategory === category.id ? "default" : "outline"}
-              className="h-20 flex-col p-4 text-xs transition-all duration-300"
+              className={`relative h-24 rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 ${
+                selectedCategory === category.id 
+                  ? 'ring-2 ring-primary shadow-lg' 
+                  : 'hover:shadow-lg'
+              }`}
               onClick={() => setSelectedCategory(selectedCategory === category.id ? null : category.id)}
             >
-              <span className="text-2xl mb-1">{category.icon}</span>
-              <span className="font-medium">{category.name}</span>
-            </Button>
+              {/* Background Image */}
+              <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${category.image})` }}
+              />
+              
+              {/* Overlay */}
+              <div className={`absolute inset-0 transition-all duration-300 ${
+                selectedCategory === category.id 
+                  ? 'bg-black/40' 
+                  : 'bg-black/50 hover:bg-black/40'
+              }`} />
+              
+              {/* Category Name */}
+              <div className="relative z-10 flex items-center justify-center h-full p-2">
+                <span className="text-white font-semibold text-sm text-center leading-tight">
+                  {category.name}
+                </span>
+              </div>
+            </button>
           ))}
         </div>
 
@@ -53,8 +73,7 @@ export const CompactMenu = () => {
 
             return (
               <div key={category.id} className="animate-fade-in">
-                <h3 className="font-playfair text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
-                  <span className="text-3xl">{category.icon}</span>
+                <h3 className="font-playfair text-2xl font-bold text-foreground mb-6">
                   {category.name}
                 </h3>
                 
